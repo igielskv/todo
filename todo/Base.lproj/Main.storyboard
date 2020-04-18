@@ -38,7 +38,7 @@
                                 <rect key="frame" x="16" y="157" width="343" height="621"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="fJM-oS-ilp">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TodoCell" id="fJM-oS-ilp" customClass="TodoTableViewCell" customModule="todo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fJM-oS-ilp" id="gc2-Kb-EUX">
@@ -68,6 +68,10 @@
                                                 <constraint firstItem="R24-Fe-mtF" firstAttribute="trailing" secondItem="gc2-Kb-EUX" secondAttribute="trailingMargin" id="ftu-Gb-fHH"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="priorityView" destination="R24-Fe-mtF" id="D6Z-6R-mwi"/>
+                                            <outlet property="todoItemLabel" destination="kML-zd-ePU" id="TLX-U0-tQ4"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
