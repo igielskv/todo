@@ -96,6 +96,7 @@
                     <connections>
                         <outlet property="prioritySegmentedControl" destination="3H9-kV-7BF" id="7Wp-ZD-Df4"/>
                         <outlet property="todoItemTextField" destination="gH8-Pc-Fij" id="f4I-FY-Vtv"/>
+                        <outlet property="todoTable" destination="q62-6W-GaH" id="HEf-AS-Fwi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
