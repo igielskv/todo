@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TodoViewController.swift
 //  todo
 //
 //  Created by Manoli on 18/04/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TodoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
