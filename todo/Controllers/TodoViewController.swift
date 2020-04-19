@@ -24,13 +24,6 @@ class TodoViewController: UIViewController, UITableViewDataSource, UITableViewDe
         todoTable.dataSource = self
         
         getTodos()
-        
-        NetworkService.shared.addTodo(todo: Todo(item: "TEST", priority: 2), onSuccess: { (todos) in
-            self.todos = todos.items
-            self.todoTable.reloadData()
-        }) { (errorMessage) in
-            debugPrint(errorMessage)
-        }
     }
 
     func getTodos() {
@@ -41,8 +34,22 @@ class TodoViewController: UIViewController, UITableViewDataSource, UITableViewDe
             debugPrint(errorMessage)
         }
     }
+    
     @IBAction func addTodoButtonTapped(_ sender: Any) {
+        guard let todoItem = todoItemTextField.text else {
+            return
+        }
         
+        let todo = Todo(item: todoItem, priority: prioritySegmentedControl.selectedSegmentIndex)
+        
+        NetworkService.shared.addTodo(todo: todo, onSuccess: { (todos) in
+            self.todos = todos.items
+            self.todoTable.reloadData()
+        }) { (errorMessage) in
+            debugPrint(errorMessage)
+        }
+        
+        todoItemTextField.text = ""
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
