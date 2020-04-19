@@ -24,6 +24,13 @@ class TodoViewController: UIViewController, UITableViewDataSource, UITableViewDe
         todoTable.dataSource = self
         
         getTodos()
+        
+        NetworkService.shared.addTodo(todo: Todo(item: "TEST", priority: 2), onSuccess: { (todos) in
+            self.todos = todos.items
+            self.todoTable.reloadData()
+        }) { (errorMessage) in
+            debugPrint(errorMessage)
+        }
     }
 
     func getTodos() {
