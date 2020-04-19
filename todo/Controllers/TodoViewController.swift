@@ -27,9 +27,11 @@ class TodoViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
 
     func getTodos() {
-        NetworkService.shared.getTodos { (todos) in
+        NetworkService.shared.getTodos(onSuccess: { (todos) in
             self.todos = todos.items
             self.todoTable.reloadData()
+        }) { (errorMessage) in
+            debugPrint(errorMessage)
         }
     }
     @IBAction func addTodoButtonTapped(_ sender: Any) {
